@@ -13,7 +13,7 @@ package pwd;
 public class CheckStrength {
 
 	public enum LEVEL {
-		EASY, MIDIUM, STRONG, VERY_STRONG, EXTREMELY_STRONG
+		EASY, MEDIUM, STRONG, VERY_STRONG, EXTREMELY_STRONG
 	}
 
 	private static final int NUM = 1;
@@ -247,7 +247,7 @@ public class CheckStrength {
 			case 4:
 			case 5:
 			case 6:
-				return LEVEL.MIDIUM;
+				return LEVEL.MEDIUM;
 			case 7:
 			case 8:
 			case 9:
