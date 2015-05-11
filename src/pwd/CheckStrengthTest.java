@@ -26,4 +26,10 @@ public class CheckStrengthTest {
         }
     }
 
+    @Test
+    public void testEasyPasswords(){
+        for(String password: EASY_PASSWORDS){
+            assertEquals(CheckStrength.LEVEL.EASY,CheckStrength.getPasswordLevel(password));
+        }
+    }
 }
