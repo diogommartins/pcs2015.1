@@ -66,7 +66,7 @@ public class CheckStrengthTest {
     @Test
     public void testDatePasswords(){
         for(String password: DATE_PASSWORDS) {
-            assertEquals(0, CheckStrength.checkPasswordStrength(password));
+            assertEquals(CheckStrength.LEVEL.EASY, CheckStrength.getPasswordLevel(password));
         }
     }
 
