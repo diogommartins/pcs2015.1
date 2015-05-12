@@ -15,9 +15,6 @@ public abstract class PasswordStrengthCondition {
 
     /**
      * Check character's type, includes num, capital letter, small letter and other character.
-     *
-     * @param c
-     * @return
      */
     protected int checkCharacterType(char c) {
         if (Character.isDigit(c)) return NUM;
@@ -26,4 +23,19 @@ public abstract class PasswordStrengthCondition {
         return OTHER_CHAR;
     }
 
+    /**
+     * Count password's number by different type
+     *
+     * @param passwd
+     * @param type
+     * @return
+     */
+    protected int countOccurrences(String passwd, int type) {
+        int count = 0;
+        if (!StringUtils.equalsNull(passwd))
+            for (Character c : passwd.toCharArray())
+                if (this.checkCharacterType(c) == type)
+                    count++;
+        return count;
+    }
 }
