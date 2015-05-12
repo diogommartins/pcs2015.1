@@ -11,7 +11,7 @@ public abstract class PasswordStrengthCondition {
     public static final int UPPER_LETTER = 3;
     public static final int OTHER_CHAR = 4;
 
-    public abstract int parseString(String password);
+    public abstract int countOcurrences(String password);
 
     /**
      * Check character's type, includes num, capital letter, small letter and other character.

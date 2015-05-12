@@ -5,7 +5,7 @@ package pwd.conditions;
  */
 public class StringSizeCondition extends PasswordStrengthCondition {
     @Override
-    public int parseString(String password) {
+    public int countOcurrences(String password) {
         int total = 0;
         int length = password.length();
 

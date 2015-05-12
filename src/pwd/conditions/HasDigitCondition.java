@@ -5,7 +5,7 @@ package pwd.conditions;
  */
 public class HasDigitCondition extends PasswordStrengthCondition {
     @Override
-    public int parseString(String password) {
+    public int countOcurrences(String password) {
         return this.countOccurrences(password, DIGIT);
     }
 }

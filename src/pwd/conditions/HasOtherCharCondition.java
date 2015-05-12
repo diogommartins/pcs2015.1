@@ -5,7 +5,7 @@ package pwd.conditions;
  */
 public class HasOtherCharCondition extends PasswordStrengthCondition {
     @Override
-    public int parseString(String password) {
+    public int countOcurrences(String password) {
         return this.countOccurrences(password, OTHER_CHAR);
     }
 }

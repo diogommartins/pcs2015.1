@@ -7,7 +7,7 @@ import pwd.StringUtils;
  */
 public class CharacterRepetitionCondition extends PasswordStrengthCondition {
     @Override
-    public int parseString(String password) {
+    public int countOcurrences(String password) {
         int length = password.length();
         int total = 0;
 

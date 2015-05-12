@@ -5,7 +5,7 @@ package pwd.conditions;
  */
 public class HasUppercaseLetterCondition extends PasswordStrengthCondition {
     @Override
-    public int parseString(String password) {
+    public int countOcurrences(String password) {
         return this.countOccurrences(password, UPPER_LETTER);
     }
 }
