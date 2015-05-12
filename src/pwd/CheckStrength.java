@@ -6,6 +6,8 @@
 package pwd;
 
 
+import pwd.conditions.*;
+
 /**
  * Check strength of a password string
  * 
@@ -21,7 +23,31 @@ public class CheckStrength {
 	private static final int CAPITAL_LETTER = 3;
 	private static final int OTHER_CHAR = 4;
 
-	/**
+    private PasswordStrengthCondition[] goodConditions;
+    private PasswordStrengthCondition[] badConditions;
+
+    public CheckStrength(PasswordStrengthCondition[] goodConditions, PasswordStrengthCondition[] badConditions) {
+        this.goodConditions = goodConditions;
+        this.badConditions = badConditions;
+    }
+
+    public PasswordStrengthCondition[] getGoodConditions() {
+        return goodConditions;
+    }
+
+    public void setGoodConditions(PasswordStrengthCondition[] goodConditions) {
+        this.goodConditions = goodConditions;
+    }
+
+    public PasswordStrengthCondition[] getBadConditions() {
+        return badConditions;
+    }
+
+    public void setBadConditions(PasswordStrengthCondition[] badConditions) {
+        this.badConditions = badConditions;
+    }
+
+    /**
 	 * Simple password dictionary
 	 */
 	private final static String[] DICTIONARY = { "password", "abc123", "iloveyou", "adobe123", "123123", "sunshine",
@@ -55,8 +81,8 @@ public class CheckStrength {
 	 */
 	private static int countLetter(String passwd, int type) {
 		int count = 0;
-		if (null != passwd && passwd.length() > 0) {
-			for (char c : passwd.toCharArray()) {
+		if (!StringUtils.equalsNull(passwd)) {
+			for (Character c : passwd.toCharArray()) {
 				if (checkCharacterType(c) == type) {
 					count++;
 				}
@@ -167,7 +193,7 @@ public class CheckStrength {
 				|| countLetter(passwd, CAPITAL_LETTER) == len) {
 			level--;
 		}
-
+//CharacterRepetitionCondition
 		if (len % 2 == 0) { // aaabbb
 			String part1 = passwd.substring(0, len / 2);
 			String part2 = passwd.substring(len / 2);
