@@ -16,7 +16,6 @@ public class CheckStrengthTest {
     final String[] DATE_PASSWORDS = {"19871207", "871207"};
     final String[] DICTIONARY_PASSWORDS = {"password", "abc123", "iloveyou"};
 
-
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
@@ -31,7 +30,7 @@ public class CheckStrengthTest {
     @Test
     public void testEasyPasswords(){
         for(String password: EASY_PASSWORDS){
-            assertEquals(CheckStrength.LEVEL.EASY,CheckStrength.getPasswordLevel(password));
+            assertEquals(CheckStrength.LEVEL.EASY, CheckStrength.getPasswordLevel(password));
         }
     }
 
