@@ -1,8 +1,9 @@
-package pwd;
+package pwd.tests;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import pwd.CheckStrength;
 
 import static org.junit.Assert.*;
 
