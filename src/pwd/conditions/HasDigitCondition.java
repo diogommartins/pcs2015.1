@@ -3,9 +3,9 @@ package pwd.conditions;
 /**
  * Created by diogomartins on 5/12/15.
  */
-public class HasNumberCondition implements PasswordStrengthCondition {
+public class HasDigitCondition extends PasswordStrengthCondition {
     @Override
     public int parseString(String password) {
-        return countLetter(passwd, NUM);
+        return this.countOccurrences(password, DIGIT);
     }
 }
